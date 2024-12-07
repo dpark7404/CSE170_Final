@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css_file/stats.css">
+
+        <link rel="stylesheet" href="css_file/accounts.css">
+    
+        <link rel="stylesheet" href="css_file/bulk.css">
+
+        <link rel="stylesheet" href="css_file/settings.css">
+
+        <link rel="stylesheet" href="css_file/help.css">
+
+        <link rel="stylesheet" href="css_file/inventory.css">
+
+        <link rel="stylesheet" href="css_file/post.css">
+    </head>
+
+    <body>
+        <!-- Screen 1: Accounts -->
+        <div id="accountsScreen" class="screen">
+            <div class='header'>
+                <h1> accounts </h1>
+                <div class='dropdown'>
+                    <span class='dropdown-tog'>☰</span>
+                    <div class='dropdown-content'>
+                        <a href='#'>listings</a>
+                        <a href='#'>settings</a>
+                        <a href="#">accounts</a>
+                        <a href="#">help</a>
+                        <a href="#">stats</a>
+                    </div>
+                </div>
+            </div>
+            <div class='divide'></div>
+            <div class='accts'>
+            </div>
+            <button class='bttn'>connect more accounts</button>
+        </div>
+
+        <!-- Hidden form for adding a new account -->
+        <div id="newAccountForm" style="display: none;">
+            <input type="text" id="newAccountName" placeholder="Enter app name" />
+            <button id="submitNewAccount" class="bttn">submit</button>
+        </div>
+
+
+        <!-- Screen 2: Stats -->
+        <div id="statsScreen" class="screen">
+            <div class="header">
+                <h1>stats</h1>
+                <div class="dropdown">
+                    <span class="dropdown-tog">☰</span>
+                    <div class="dropdown-content">
+                        <a href="#">listings</a>
+                        <a href="#">settings</a>
+                        <a href="#">accounts</a>
+                        <a href="#">help</a>
+                        <a href="#">stats</a>
+                    </div>
+                </div>
+            </div>
+            <div class='divide'></div>
+
+            <!-- Overview and Filter Section -->
+            <div class="overview-filter">
+                <h2 class="overview-title">overview</h2>
+                <select class="filter-dropdown">
+                    <option>7 Days</option>
+                    <option>30 Days</option>
+                    <option>3 Months</option>
+                    <option>6 Months</option>
+                    <option>1 Year</option>
+                </select>
+            </div>
+
+            <!-- Revenue and Sales Boxes -->
+            <div class="dashboard-container">
+                <div class="dashboard-box">
+                    <h2>revenue</h2>
+                    <p>$0.00</p>
+                </div>
+                <div class="dashboard-box">
+                    <h2>sales</h2>
+                    <p>0</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>             
+
+        <!-- Screen 3: My Listings -->
+        <div id="listingsScreen" class="screen">
+            <div class='header'>
+                <h1>listings</h1>
+                <div class='dropdown'>
+                    <span class='dropdown-tog'>☰</span> <!-- Menu icon -->
+                    <div class='dropdown-content'>
+                        <a href="#">listings</a>
+                        <a href="#">settings</a>
+                        <a href="#">accounts</a>
+                        <a href="#">help</a>
+                        <a href="#">stats</a>
+                    </div>
+                </div>
+            </div>
+            <div class='divide'></div>
+
+            <!-- Archive Storage Box Icon Button -->
+            <div class="archive-box" onclick="showScreen('inventoryScreen')">
+                <div class="box-lid"></div>
+                <div class="box-body"></div>
+            </div>
+
+            <!-- User Profile Section -->
+    
+            <!-- Active Listings Section -->
+            <div class="active-listings">
+                <h5>active listings (6)</h5>
+            </div>
+            <div class="divide"></div>
+
+            <!-- Post and Delete Buttons (Listings Screen) -->
+            <div class="buttons">
+                <button class="custom-btn post-btn">post</button>
+                <button class="custom-btn delete-btn">delete</button>
+            </div>
+
+            <!-- Divider for buttons -->
+            <div class="divide"></div>
+    
+            <!-- Image Boxes -->
+            <div class="image-grid-container">
+                <div class="image-box">
+                    <input type="checkbox" class="checkbox" />
+                    <img src="DA5_images/item1.png" alt="Image 1" class="listing-img" />
+                </div>
+                <div class="image-box">
+                    <input type="checkbox" class="checkbox" />
+                    <img src="DA5_images/item2.png" alt="Image 2" class="listing-img" />
+                </div>
+                <div class="image-box">
+                    <input type="checkbox" class="checkbox" />
+                    <img src="DA5_images/item3.png" alt="Image 3" class="listing-img" />
+                </div>
+                <div class="image-box">
+                    <input type="checkbox" class="checkbox" />
+                    <img src="DA5_images/item4.png" alt="Image 4" class="listing-img" />
+                </div>
+                <div class="image-box">
+                    <input type="checkbox" class="checkbox" />
+                    <img src="DA5_images/item5.png" alt="Image 5" class="listing-img" />
+                </div>
+                <div class="image-box">
+                    <input type="checkbox" class="checkbox" />
+                    <img src="DA5_images/item6.png" alt="Image 6" class="listing-img" />
+                </div>
+            </div>
+
+        </div>
+
+                <!-- Settings Screen (Placeholder) -->
+        <div id="settingsScreen" class="screen">
+            <div class='header'>
+                <h1>settings</h1>
+                <div class='dropdown'>
+                    <span class='dropdown-tog'>☰</span>
+                    <div class='dropdown-content'>
+                        <a href="#">listings</a>
+                        <a href="#">settings</a>
+                        <a href="#">accounts</a>
+                        <a href="#">help</a>
+                        <a href="#">stats</a>
+                    </div>
+                </div>
+            </div>
+            <div class="divide"></div>
+        </div>
+
+            <!-- Help Screen -->
+        <div id="helpScreen" class="screen">
+            <div class='header'>
+                <h1>help</h1>
+                <div class='dropdown'>
+                    <span class='dropdown-tog'>☰</span>
+                    <div class='dropdown-content'>
+                        <a href="#">listings</a>
+                        <a href="#">settings</a>
+                        <a href="#">accounts</a>
+                        <a href="#">help</a>
+                        <a href="#">stats</a>
+                    </div>
+                </div>
+            </div>
+            <div class="divide"></div>
+        </div>
+
+        <!-- Screen 4: Inventory -->
+        <div id="inventoryScreen" class="screen">
+            <div class='header'>
+                <h1>inventory</h1>
+                <div class='dropdown'>
+                    <span class='dropdown-tog'>☰</span>
+                    <div class='dropdown-content'>
+                        <a href="#">listings</a>
+                        <a href="#">settings</a>
+                        <a href="#">accounts</a>
+                        <a href="#">help</a>
+                        <a href="#">stats</a>
+                    </div>
+                </div>
+            </div>
+            <div class="divide"></div>
+        </div>
+
+        <!-- Post Item Page -->
+        <div id="postItemPage" class="screen">
+            <div class="header">
+                <span class="close-btn" onclick="closePostPage()">X</span>
+                <h1>Post an Item</h1>
+            </div>
+
+            <!-- Content Section -->
+            <div class="content">
+                <!-- Button to Add Image -->
+                <button class="add-img-btn" onclick="openFileSelector()">+ Add Image</button>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*" />
+
+                <div id="imagePreview" style="margin-top: 10px; text-align: center; color: gray;">
+                    No image uploaded.
+                </div>
+
+                <!-- Input for Product Name -->
+                <input type="text" id="productName" placeholder="Enter product name" />
+
+                <!-- Input for Product Description -->
+                <input type="text" id="productDescription" placeholder="Enter product description" />
+
+                <!-- Button to Post the Item -->
+                <button class="post-btn" onclick="postNewItem()">Post</button>
+            </div>
+        </div>
+
+
+
+        <script>
+            function showScreen(screenId) {
+                document.querySelectorAll(".screen").forEach(screen => {
+                    screen.style.display = "none";
+                });
+        
+                const targetScreen = document.getElementById(screenId);
+                if (targetScreen) {
+                    targetScreen.style.display = "block";
+                }
+            }
+        
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuItems = document.querySelectorAll(".dropdown-content a");
+        
+                showScreen("listingsScreen");
+        
+                menuItems.forEach(menuItem => {
+                    menuItem.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent default link action
+        
+                        const screenId = event.target.textContent.toLowerCase().replace(/\s+/g, '') + "Screen";
+        
+                        showScreen(screenId);
+                    });
+                });
+            });
+
+            document.querySelector('.delete-btn').addEventListener('click', function() {
+                const checkboxes = document.querySelectorAll('.checkbox:checked');
+                
+                checkboxes.forEach(checkbox => {
+                    const imageBox = checkbox.closest('.image-box');
+                    imageBox.classList.add('disabled');
+                });
+            });
+
+            document.querySelector('.post-btn').addEventListener('click', function() {
+                document.getElementById('postItemPage').style.display = 'block'; // Show the post item page
+                document.getElementById('listingsScreen').style.display = 'none'; // Hide the listings page
+            });
+
+            function closePostPage() {
+                document.getElementById('postItemPage').style.display = 'none'; // Hide the post item page
+                document.getElementById('listingsScreen').style.display = 'block'; // Show the listings page
+            }
+
+
+            document.querySelector('.bttn').addEventListener('click', function() {
+                document.getElementById('newAccountForm').style.display = 'block';
+                this.style.display = 'none'; 
+            });
+
+            document.getElementById('submitNewAccount').addEventListener('click', function() {
+                const appName = document.getElementById('newAccountName').value;
+
+                if (appName.trim() !== "") {
+                    const newAccountItem = document.createElement('div');
+                    newAccountItem.classList.add('acct_items');
+
+                    const newAccountName = document.createElement('span');
+                    newAccountName.classList.add('acct_name');
+                    newAccountName.textContent = appName;
+
+                    const newCheckbox = document.createElement('input');
+                    newCheckbox.type = 'checkbox';
+                    newCheckbox.classList.add('checkbox');
+
+                    newAccountItem.appendChild(newAccountName);
+                    newAccountItem.appendChild(newCheckbox);
+
+                    document.querySelector('.accts').appendChild(newAccountItem);
+
+                    document.getElementById('newAccountForm').style.display = 'none';
+                    document.querySelector('.bttn').style.display = 'block';
+
+                    document.getElementById('newAccountName').value = "";
+                }
+            });
+
+            function openFileSelector() {
+                const fileInput = document.getElementById("fileInput");
+                if (fileInput) {
+                    fileInput.click(); 
+                } else {
+                    console.error("File input element not found!");
+                }
+            }
+
+            document.getElementById("fileInput").addEventListener("change", function (event) {
+                const file = event.target.files[0];
+                const previewArea = document.getElementById("imagePreview");
+
+                if (file) {
+                    previewArea.innerHTML = ""; // Clear previous content
+                    const imgPreview = document.createElement("img");
+                    imgPreview.src = URL.createObjectURL(file);
+                    imgPreview.alt = "Uploaded Image Preview";
+                    imgPreview.style.maxWidth = "100px"; // Set preview size
+                    imgPreview.style.maxHeight = "100px";
+                    previewArea.appendChild(imgPreview);
+
+                    const message = document.createElement("p");
+                    message.textContent = "Image uploaded successfully!";
+                    message.style.color = "green";
+                    previewArea.appendChild(message);
+                } else {
+                    previewArea.innerHTML = "No image uploaded.";
+                }
+            });
+
+
+            function closePostPage() {
+                const postItemPage = document.getElementById("postItemPage");
+                if (postItemPage) {
+                    postItemPage.style.display = "none"; // Hide the post item page
+                } else {
+                    console.error("Post Item Page element not found!");
+                }
+
+                const listingsScreen = document.getElementById("listingsScreen");
+                if (listingsScreen) {
+                    listingsScreen.style.display = "block"; // Show the listings screen
+                } else {
+                    console.error("Listings screen element not found!");
+                }
+            }
+
+            function postNewItem() {
+                const fileInput = document.getElementById("fileInput");
+                const productName = document.getElementById("productName").value.trim();
+                const productDescription = document.getElementById("productDescription").value.trim();
+
+                if (!fileInput || !fileInput.files.length) {
+                    alert("Please select an image!");
+                    return;
+                }
+                if (!productName) {
+                    alert("Please enter a product name!");
+                    return;
+                }
+                if (!productDescription) {
+                    alert("Please enter a product description!");
+                    return;
+                }
+
+                if (confirm("Are you sure you want to post this item?")) {
+                    const listingsGrid = document.querySelector("#listingsScreen .image-grid-container");
+
+                    if (listingsGrid) {
+                        const newImageBox = document.createElement("div");
+                        newImageBox.classList.add("image-box");
+
+                        const checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.classList.add("checkbox");
+
+                        const img = document.createElement("img");
+                        img.src = URL.createObjectURL(fileInput.files[0]);
+                        img.alt = productName;
+                        img.classList.add("listing-img");
+
+                        newImageBox.appendChild(checkbox);
+                        newImageBox.appendChild(img);
+
+                        listingsGrid.appendChild(newImageBox);
+
+                        fileInput.value = ""; // Clear the file input
+                        document.getElementById("productName").value = "";
+                        document.getElementById("productDescription").value = "";
+
+                        closePostPage();
+
+                        const listingsScreen = document.getElementById("listingsScreen");
+                        if (listingsScreen) {
+                            listingsScreen.style.display = "block"; // Show the listings screen
+                        } else {
+                            console.error("Listings screen element not found!");
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+        </script>
+        
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                function initializeStatsChart() {
+                    const ctx = document.getElementById('revenueChart').getContext('2d');
+                    const myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                            datasets: [{
+                                label: 'Dataset 1',
+                                data: [12, 19, 3, 5, 2, 3],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                }
+        
+                const menuItems = document.querySelectorAll(".dropdown-content a");
+                menuItems.forEach(menuItem => {
+                    menuItem.addEventListener("click", function (event) {
+                        const screenId = event.target.textContent.toLowerCase().replace(/\s+/g, '') + "Screen";
+                        if (screenId === "statsScreen") {
+                            initializeStatsChart();
+                        }
+                    });
+                });
+            });
+        </script>
+        
+
+    </body>
+<html>
