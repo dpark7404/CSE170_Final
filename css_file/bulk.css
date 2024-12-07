@@ -1,0 +1,282 @@
+/* Listings Screen */
+#listingsScreen {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+}
+#listingsScreen .screen.active {
+    display: block;
+}
+
+/* Header and Dropdown Menu */
+#listingsScreen .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+}
+#listingsScreen .dropdown {
+    position: absolute;
+    right: 20px;
+}
+#listingsScreen .dropdown-tog {
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    transition: background-color .3s;
+}
+#listingsScreen .dropdown-tog:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border-color: #FF0000;
+}
+#listingsScreen .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, .2);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+#listingsScreen .dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+#listingsScreen .dropdown-content a:hover {
+    background-color: #e5e5e5;
+}
+#listingsScreen .dropdown:hover .dropdown-content {
+    display: block;
+}
+#listingsScreen h1 {
+    color: #000000;
+    text-align: center;
+    padding: 2%;
+    font-size: 36px;
+}
+
+/* Divider */
+#listingsScreen .divide {
+    width: 100%;
+    height: 2px;
+    background-color: #e5e5e5;
+    margin: 10px 0 20px;
+}
+
+/* Profile Section */
+
+/* Active Listings Section */
+#listingsScreen .active-listings {
+    margin-bottom: 20px;
+    padding-left: 5%;  /* Adjusted for left alignment */
+    font-size: 24px;
+    text-align: left; /* Aligns text to the left */
+    max-height: 300px; /* Fixed height for scrollable container */
+    overflow-y: auto; /* Enables scrolling */
+    padding-left: 10px; /* Keeps scrollbar within container */
+}
+
+/* Image Boxes Row (No Change to Layout) */
+#listingsScreen .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Image Box Columns (No Change to Layout) */
+#listingsScreen .col {
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+}
+
+#listingsScreen .image-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 20px; /* Space between the boxes */
+    max-height: 500px; /* Height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    border: 1px solid #e5e5e5; /* Optional: Add a border around the grid */
+}
+
+/* Image Boxes */
+#listingsScreen .image-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100%; /* Maintain square aspect ratio */
+    border: 2px solid #e5e5e5; /* Border for the image box */
+    border-radius: 5px; /* Optional: Rounded corners */
+    overflow: hidden;
+}
+
+/* Image inside the box */
+#listingsScreen .image-box img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensure image fills the box */
+    height: 100%; /* Ensure image fills the box */
+    object-fit: cover; /* Ensure image covers the box without stretching it */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Optional: Add a class to show "disabled" state (optional, for better control) */
+.image-box.disabled img {
+    opacity: 0;
+}
+
+
+
+#listingsScreen .checkbox {
+    position: absolute;
+    top: 10px; /* Adjust position from the top */
+    left: 7%;
+    transform: translateX(-50%); /* Center the checkbox horizontally */
+    cursor: pointer;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    outline: 2px solid #E5E5E5;
+    background-color: white; /* Solid white background */
+    z-index: 10; /* Ensure checkbox is above the image */
+}
+
+#listingsScreen .checkbox:checked {
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+#listingsScreen .placeholder {
+    font-size: 50px;
+    color: #000000;
+}
+
+/* Listings Section */
+#listingsScreen .my-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#listingsScreen .listing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #F8F8F8;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .1);
+}
+#listingsScreen .listing h3 {
+    font-size: 18px;
+    color: #000000;
+}
+#listingsScreen .listing p {
+    font-size: 16px;
+    color: #757575;
+}
+
+/* Buttons Section */
+#listingsScreen .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin: auto;
+    width: 60%;
+}
+#listingsScreen .custom-btn {
+    width: 48%;
+    background-color: #E5E5E5;
+    color: #000000;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+}
+#listingsScreen .custom-btn:hover {
+    background-color: #FF0000;
+    color: white;
+}
+
+
+
+/* Edit Button */
+#listingsScreen .listing .edit-bttn {
+    cursor: pointer;
+    padding: 6px 12px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    transition: background-color .3s;
+}
+#listingsScreen .listing .edit-bttn:hover {
+    background-color: #FF4C4C;
+}
+
+
+/* Inventory Section */
+#listingsScreen .inventory-section {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Inventory Button */
+#listingsScreen .inventory-btn {
+    background-color: #E5E5E5;
+    color: #000000;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+#listingsScreen .inventory-btn:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+/* Archive Storage Box CSS */
+.archive-box {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    float: right; /* Keeps box aligned to the right */
+    width: 130px; /* Doubled width for a bigger box */
+    height: 100px; /* Doubled height for a bigger box */
+    text-align: center;
+    margin-right: 50px; /* Moves the box slightly to the left */
+}
+
+.archive-box .box-lid {
+    width: 100%;
+    height: 20px; /* Doubled lid height */
+    background-color: #E5E5E5; /* Color matching your theme */
+    border-radius: 10px 10px 0 0; /* Rounded corners on the top */
+}
+
+.archive-box .box-body {
+    width: 80%;
+    height: 55px; /* Doubled body height */
+    margin: 5px auto 0; /* Adjust for bigger box */
+    background-color: #E5E5E5; /* Matching color for box */
+    border-radius: 0 0 10px 10px; /* Rounded corners on the bottom */
+}
+

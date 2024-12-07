@@ -1,0 +1,95 @@
+/* Post Item Page Styling */
+#postItemPage {
+    display: none; /* Hide by default */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color, #FFFFFF); /* Use shared variable */
+    padding: 20px;
+}
+
+/* Header for the Post Item Page */
+#postItemPage .header {
+    display: flex;
+    justify-content: center; /* Center the header text */
+    align-items: center;
+    padding: 20px;
+    background-color: var(--header-bg-color, #E5E5E5); /* Use shared variable */
+    border-radius: var(--border-radius, 6px); /* Use shared variable */
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button for the Post Item Page */
+#postItemPage .close-btn {
+    position: absolute;
+    left: 20px; /* Position it to the left */
+    font-size: 24px;
+    color: var(--text-color, #000000); /* Use shared text color */
+    cursor: pointer;
+}
+
+/* Header Title Styling */
+#postItemPage h1 {
+    font-size: 24px;
+    color: var(--text-color, #000000); /* Shared text color */
+    margin: 0;
+}
+
+/* Content Section */
+#postItemPage .content {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align all items */
+}
+
+/* Button Styling */
+#postItemPage .content button {
+    background-color: var(--button-bg-color, #E5E5E5); /* Match header background */
+    color: var(--button-text-color, #000000); /* Shared button text color */
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius, 6px); /* Shared border-radius */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+    width: 100%; /* Consistent button width */
+    max-width: 300px; /* Optional max-width for alignment */
+    text-align: center;
+}
+
+/* Hover Effect for Buttons */
+#postItemPage .content button:hover {
+    background-color: var(--button-hover-bg-color, #FF4C4C); /* Shared hover color */
+    color: var(--button-hover-text-color, #FFFFFF); /* Shared hover text color */
+}
+
+/* Input Styling */
+#postItemPage .content input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--input-border-color, #E5E5E5); /* Shared border color */
+    border-radius: var(--border-radius, 6px); /* Shared border-radius */
+    font-size: 16px;
+    margin: 10px 0;
+    width: 100%; /* Consistent width */
+    max-width: 300px; /* Optional max-width for alignment */
+    box-sizing: border-box; /* Avoid overflow issues */
+}
+
+/* Hidden File Input */
+#postItemPage .content input[type="file"] {
+    display: none;
+}
+
+/* Styling for Placeholder Text */
+#postItemPage .content input::placeholder {
+    color: var(--placeholder-text-color, #888888); /* Shared placeholder color */
+}
+
+/* Image Preview Styling (if needed later) */
+#postItemPage .content img {
+    max-width: 100%;
+    border-radius: var(--border-radius, 6px);
+    margin-top: 10px;
+}
